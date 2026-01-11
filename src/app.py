@@ -61,24 +61,24 @@ if uploaded_file is not None:
         image = load_image(uploaded_file)
         
         # 분류 실행
-        with st.spinner("이미지 분류 중..."):
+        with st.spinner("이미지 분석 중..."):
             results = model(image)
 
-        st.success("분류 완료!")    
+        st.success("분석 완료!")    
 
         # 결과 출력
             # 상위 1개 결과를 강조하여 표시
             # `st.progress()`를 활용하여 확률을 시각적으로 표현
             # 퍼센트 형식으로 신뢰도 표시 (예: 92.3%)
             
-        st.write("분류 결과:")
+        st.write("분석 결과:")
         # 가장 높은 스코어 강조
         top_result = results[0]
 
         top_label = top_result["label"]
         top_score = top_result["score"]
         
-        st.subheader(f"🏆 예측 결과: 이 이미지는 {top_label}일 확률이 가장 높습니다.")
+        st.subheader(f"🏆 이 이미지는 {top_label}일 확률이 가장 높습니다.")
         st.metric(
             label="신뢰도",
             value=f"{top_score * 100:.1f}%"
@@ -87,7 +87,7 @@ if uploaded_file is not None:
         st.write("---")
 
         # 나머지 스코어
-        st.caption("그 외 분류 결과")
+        st.caption("그 외 분석 결과")
         for result in results[1:]:
             st.write(f"{result['label']}: {result['score']*100:.1f}%")
             st.progress(int(result['score'] * 100))
@@ -110,7 +110,7 @@ if uploaded_file is not None:
                 "label": "분류 라벨",
                 "confidence": "신뢰도 (%)"
             },
-            title="Top-5 이미지 분류 결과"
+            title="Top-5 이미지 분석 결과"
         )
 
         fig.update_traces(
