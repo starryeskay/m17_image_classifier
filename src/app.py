@@ -5,7 +5,7 @@ import pandas as pd
 import plotly.express as px
 
 st.set_page_config(
-    page_title="이미지 분류기",
+    page_title="AI 이미지 분석기",
     page_icon="🖼️"
 )
 
@@ -38,18 +38,18 @@ def classify_image(image):
     return results
 
 # UI 레이아웃 구성
-st.title("이미지 분류기")
-st.info("이미지를 업로드하고 분류 결과를 확인하세요.")
+st.title("AI 이미지 분석 서비스")
+st.info("이미지를 업로드하면 AI가 분석 결과를 알려드립니다.")
 
 # 이미지 업로드 (사진 파일 / 카메라)
-input_method = st.radio("이미지 입력 방법을 선택하세요",
+input_method = st.radio("이미지 입력 방법을 선택해주세요.",
                         ("파일 업로드", "카메라로 촬영")
                         )
 
 uploaded_file = None
 
 if input_method == "파일 업로드":
-    uploaded_file = st.file_uploader("이미지를 업로드하세요", type=["jpg", "jpeg", "png"])
+    uploaded_file = st.file_uploader("이미지 파일을 선택해주세요", type=["jpg", "jpeg", "png"])
 
 elif input_method == "카메라로 촬영":
     uploaded_file = st.camera_input("사진을 찍어주세요")
