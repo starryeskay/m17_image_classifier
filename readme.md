@@ -1,3 +1,8 @@
+미션 URL: https://m17imageclassifier.streamlit.app/
+
+![alt text](image-2.png)
+
+-------
 # 미션 소개
 
 이번 미션에서는 사용자가 웹 인터페이스에서 이미지를 업로드하면 해당 이미지가 무엇인지 **분류(Classification)**하는 Streamlit 기반 웹 서비스를 개발해봅시다. 이를 위해 **Hugging Face의Transformers 라이브러리**에서 제공하는 사전학습된 이미지 분류 모델을 활용해볼거에요.
