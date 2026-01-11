@@ -1,6 +1,7 @@
 미션 URL: https://m17imageclassifier.streamlit.app/
 
-![alt text](image-2.png)
+<img width="747" height="745" alt="image" src="https://github.com/user-attachments/assets/20577a88-cb2a-485f-bb90-48621757b9e9" />
+
 
 -------
 # 미션 소개
