@@ -57,8 +57,7 @@ elif input_method == "카메라로 촬영":
 if uploaded_file is not None:
     st.image(uploaded_file, caption='업로드된 이미지')
 
-if st.button("분류 시작"):
-    if uploaded_file is not None:
+    if st.button("분석 하기"):
         image = load_image(uploaded_file)
         
         # 분류 실행
@@ -128,5 +127,3 @@ if st.button("분류 시작"):
         st.plotly_chart(fig, use_container_width=True)
 
         
-    else:
-        st.write("이미지를 업로드하고 버튼을 눌러주세요.")
