@@ -2,6 +2,7 @@ import streamlit as st
 from model import ImageClassifier
 from PIL import Image
 import pandas as pd
+import plotly.express as px
 
 st.set_page_config(
     page_title="이미지 분류기",
@@ -92,11 +93,40 @@ if st.button("분류 시작"):
             st.write(f"{result['label']}: {result['score']*100:.1f}%")
             st.progress(int(result['score'] * 100))
 
+        # top5 차트 시각화
+        # 데이터 준비 
         top5 = results[:5]
         df = pd.DataFrame({
             "label": [r["label"] for r in top5],
             "confidence": [r["score"] * 100 for r in top5]
         })
 
+        # Ploytly 막대 차트
+        fig = px.bar(
+            df,
+            x="label",
+            y="confidence",
+            text="confidence",
+            labels={
+                "label": "분류 라벨",
+                "confidence": "신뢰도 (%)"
+            },
+            title="Top-5 이미지 분류 결과"
+        )
+
+        fig.update_traces(
+            texttemplate="%{text:.1f}%",
+            textposition="outside"
+        )
+
+        fig.update_layout(
+            yaxis_range=[0, 100],
+            uniformtext_minsize=10,
+            uniformtext_mode="hide"
+        )
+
+        st.plotly_chart(fig, use_container_width=True)
+
+        
     else:
         st.write("이미지를 업로드하고 버튼을 눌러주세요.")
