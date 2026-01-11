@@ -1,4 +1,5 @@
-미션 URL: https://m17imageclassifier.streamlit.app/
+Streamlit Cloud URL:
+https://m17imageclassifier.streamlit.app/
 
 <img width="747" height="745" alt="image" src="https://github.com/user-attachments/assets/20577a88-cb2a-485f-bb90-48621757b9e9" />
 
