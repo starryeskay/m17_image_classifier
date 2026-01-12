@@ -1,7 +1,7 @@
 Streamlit Cloud URL:
 https://m17imageclassifier.streamlit.app/
 
-<img width="747" height="745" alt="image" src="https://github.com/user-attachments/assets/20577a88-cb2a-485f-bb90-48621757b9e9" />
+<img width="745" height="394" alt="image" src="https://github.com/user-attachments/assets/9356fa8c-5bb4-4335-bbc0-9fb0dbf949a6" />
 
 
 -------
